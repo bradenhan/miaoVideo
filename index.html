@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <title>Hello APP</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_455186_yhtzzlt1r4lvj9k9.css">
     <link rel="stylesheet" type="text/css" href="./css/api.css" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
 
@@ -79,12 +80,6 @@
             background: #000;
         }
 
-        .topbar {
-            background: #EBECF0;
-            height: 50px;
-            border-bottom: 1px solid #DDDFE3;
-        }
-
         .btn_click {
             background: #DADDE0;
         }
@@ -136,24 +131,10 @@
             margin-right: auto;
         }
         /*推荐头部*/
-
-        .right_btn {
+        /*.right_btn {
             float: right;
             padding: 11px 15px 11px 15px;
-        }
-
-        #logo {
-            padding: 11px 0 0 10px;
-            height: 28px;
-        }
-
-        #topbar_profile {
-            height: 28px;
-        }
-
-        #topbar_search {
-            height: 28px;
-        }
+        }*/
 
         .btn_click {
             background: #DADDE0;
@@ -184,6 +165,25 @@
             width: 40px;
             padding: 5px 10px;
         }
+        /* 整理后代码 */
+
+        .topbar {
+            padding: 10px 10px;
+            border-bottom: 1px solid #e9e9e9;
+            background: #fff;
+            min-height: 50px;
+        }
+
+        .topbar .logo {
+            display: block;
+            height: 18px;
+        }
+
+        .topbar .topbar_search {
+            display: block;
+            height: 20px;
+            margin: 10px 0 0;
+        }
     </style>
 </head>
 
@@ -192,9 +192,8 @@
         <!-- 推荐头部 -->
         <div id="recommandTitle" class="titlebar activebar">
             <div class="topbar">
-                <img src="./image/push_logo.png" alt="" id="logo">
-                <!-- <img src="./image/topbar_profile.png" alt="" class="right_btn" id="topbar_profile" tapmode="btn_click" onclick="openNewWindow('personal')"> -->
-                <img src="./image/topbar_search.png" alt="" class="right_btn" id="topbar_search" tapmode="btn_click" onclick="openNewWindow('search')">
+                <img class="logo" src="./image/push_logo.png" alt="" id="logo">
+                <img src="./image/topbar_search.png" alt="" class="right_btn topbar_search" id="topbar_search" tapmode="btn_click" onclick="openNewWindow('search')">
             </div>
         </div>
 
@@ -274,7 +273,7 @@
     var recommandheader = $api.byId('recommandTitle');
     var hotheader = $api.byId('hotTitle');
     var warehouseheader = $api.byId('warehouseTitle');
-  //  var offlineheader = $api.byId('offlineTitle');
+    //  var offlineheader = $api.byId('offlineTitle');
     var recommandheader = $api.offset(recommandheader);
 
 
@@ -596,7 +595,7 @@
         recommandheader = $api.byId('recommandTitle');
         hotheader = $api.byId('hotTitle');
         warehouseheader = $api.byId('warehouseTitle');
-      //  offlineheader = $api.byId('offlineTitle');
+        //  offlineheader = $api.byId('offlineTitle');
 
 
         var header = $api.dom('#recommandTitle .topbar');
