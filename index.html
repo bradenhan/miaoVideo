@@ -12,7 +12,7 @@
         #footer {
             height: 56px;
             line-height: 55px;
-            background-color: #303032;
+            background-color: #fff;
         }
 
         ul {
@@ -193,7 +193,7 @@
         <div id="recommandTitle" class="titlebar activebar">
             <div class="topbar">
                 <img src="./image/push_logo.png" alt="" id="logo">
-                <img src="./image/topbar_profile.png" alt="" class="right_btn" id="topbar_profile" tapmode="btn_click" onclick="openNewWindow('personal')">
+                <!-- <img src="./image/topbar_profile.png" alt="" class="right_btn" id="topbar_profile" tapmode="btn_click" onclick="openNewWindow('personal')"> -->
                 <img src="./image/topbar_search.png" alt="" class="right_btn" id="topbar_search" tapmode="btn_click" onclick="openNewWindow('search')">
             </div>
         </div>
@@ -201,7 +201,7 @@
         <!-- 热点头部 -->
         <div id="hotTitle" class="titlebar">
             <div class="topbar">
-                <p class="topbar_title">热点</p>
+                <p class="topbar_title">关注</p>
                 <img src="./image/local_icon_refresh.png" alt="" class="right_btn" id="topbar_refresh" tapmode="btn_click" onclick="emptyopt()">
                 <img src="./image/topbar_search.png" alt="" class="right_btn" id="topbar_search" tapmode="btn_click" onclick="openNewWindow('search')">
 
@@ -228,7 +228,7 @@
 
 
         <!-- 离线头部 -->
-        <div id="offlineTitle" class="titlebar">
+        <!-- <div id="offlineTitle" class="titlebar">
             <div class="topbar">
                 <p class="topbar_title">离线观看</p>
                 <img src="./image/local_icon_refresh.png" alt="" id="localrefresh" tapmode="btn_click" onclick="">
@@ -241,7 +241,7 @@
                     <div class="redbox"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <div id="main">
@@ -251,20 +251,20 @@
         <div id="footer">
             <ul>
                 <li tapmode="bottomhover" onclick="switchframe('recommand')">
-                    <a class="bottom_btn wxbtn weixin activebtn activebtn0">推荐</a>
+                    <a class="bottom_btn wxbtn weixin activebtn activebtn0">首页</a>
                 </li>
 
                 <li tapmode="bottomhover" onclick="switchframe('hot')">
-                    <a class="bottom_btn txbtn communicate">热点</a>
+                    <a class="bottom_btn txbtn communicate">关注</a>
                 </li>
 
-                <li tapmode="bottomhover" onclick="switchframe('warehouse')">
-                    <a class="bottom_btn fxbtn discover">片库</a>
+                <li tapmode="bottomhover" onclick="openNewWindow('personal')">
+                    <a class="bottom_btn fxbtn discover">登录</a>
                 </li>
 
-                <li tapmode="bottomhover" onclick="switchframe('offline')">
+                <!-- <li tapmode="bottomhover" onclick="switchframe('offline')">
                     <a class="bottom_btn mebtn home">离线</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -274,7 +274,7 @@
     var recommandheader = $api.byId('recommandTitle');
     var hotheader = $api.byId('hotTitle');
     var warehouseheader = $api.byId('warehouseTitle');
-    var offlineheader = $api.byId('offlineTitle');
+  //  var offlineheader = $api.byId('offlineTitle');
     var recommandheader = $api.offset(recommandheader);
 
 
@@ -297,11 +297,6 @@
             bgColor: 'rgba(255,255,255,0)',
             vScrollBarEnabled: false,
             hScrollBarEnabled: true,
-            // animation: {
-            //         type: 'flip',
-            //         subType: 'from_bottom',
-            //         duration: 500
-            //     }
         });
     }
 
@@ -312,7 +307,6 @@
             len = lis.length;
         var curLi = lis[index];
 
-        // api.alert({msg:len});
         for (i; i < len; i++) {
             var thisLi = lis[i];
             if (thisLi === curLi) {
@@ -602,17 +596,17 @@
         recommandheader = $api.byId('recommandTitle');
         hotheader = $api.byId('hotTitle');
         warehouseheader = $api.byId('warehouseTitle');
-        offlineheader = $api.byId('offlineTitle');
+      //  offlineheader = $api.byId('offlineTitle');
 
 
         var header = $api.dom('#recommandTitle .topbar');
         var header2 = $api.dom('#hotTitle .topbar');
         var header3 = $api.dom('#warehouseTitle .topbar');
-        var header4 = $api.dom('#offlineTitle .topbar');
+        //var header4 = $api.dom('#offlineTitle .topbar');
         $api.fixStatusBar(header);
         $api.fixStatusBar(header2);
         $api.fixStatusBar(header3);
-        $api.fixStatusBar(header4);
+        //$api.fixStatusBar(header4);
         recommandheader = $api.offset(recommandheader);
         main = $api.byId('main');
         mainPos = $api.offset(main);
